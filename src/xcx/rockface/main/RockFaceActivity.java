@@ -48,7 +48,7 @@ public class RockFaceActivity extends Activity implements SensorEventListener,
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+		setContentView(R.layout.rockface);
 
 		// х╚фа
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,

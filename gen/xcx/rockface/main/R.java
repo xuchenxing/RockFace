@@ -19,10 +19,16 @@ public final class R {
         public static final int lp005=0x7f020005;
     }
     public static final class id {
-        public static final int imageView=0x7f050000;
+        public static final int gallery=0x7f050001;
+        public static final int imageView=0x7f050004;
+        public static final int imageswitcher=0x7f050003;
+        public static final int rockface=0x7f050002;
+        public static final int switcher=0x7f050000;
     }
     public static final class layout {
-        public static final int main=0x7f030000;
+        public static final int imageswitcher=0x7f030000;
+        public static final int main=0x7f030001;
+        public static final int rockface=0x7f030002;
     }
     public static final class string {
         public static final int app_name=0x7f040001;
