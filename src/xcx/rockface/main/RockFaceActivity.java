@@ -58,11 +58,6 @@ public class RockFaceActivity extends Activity implements SensorEventListener,
 		mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
 		imageView = (ImageView) findViewById(R.id.imageView);
-		/*
-		 * Bitmap bitmap =
-		 * getLoacalBitmap("/res/drawable-hdpi/ic_launcher.png");
-		 * imageView.setImageBitmap(bitmap); imageView.setVisibility(0);
-		 */
 
 		imageView.setImageResource(pic[picNum]);
 		imageView.setOnClickListener(new OnClickListener() {

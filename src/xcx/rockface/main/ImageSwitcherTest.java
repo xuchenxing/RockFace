@@ -3,7 +3,10 @@ package xcx.rockface.main;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.AnimationUtils;
@@ -19,12 +22,16 @@ import android.widget.ViewSwitcher.ViewFactory;
 
 public class ImageSwitcherTest extends Activity implements
 		OnItemSelectedListener, ViewFactory {
+	
+	private String TAG = this.getClass().getName();
+	
 	private ImageSwitcher is;
 	private Gallery gallery;
 	private Integer[] mThumbIds = { R.drawable.lp001, R.drawable.lp002, R.drawable.lp003,
 			R.drawable.lp004, R.drawable.lp005 };
 	private Integer[] mImageIds = { R.drawable.lp001, R.drawable.lp002, R.drawable.lp003,
 			R.drawable.lp004, R.drawable.lp005 };
+	private int downX, upX;
 
 	/*
 	 * (non-Javadoc)
@@ -43,6 +50,39 @@ public class ImageSwitcherTest extends Activity implements
 				android.R.anim.fade_in));
 		is.setOutAnimation(AnimationUtils.loadAnimation(this,
 				android.R.anim.fade_out));
+		//增加滑动切换
+		is.setOnTouchListener(new OnTouchListener() {
+			@Override
+			public boolean onTouch(View view, MotionEvent event) {
+				if(event.getAction()==MotionEvent.ACTION_DOWN) {
+					downX = (int)event.getX(); //取得按下时的x坐标
+					return true;
+				}else if(event.getAction()==MotionEvent.ACTION_UP){
+					upX = (int)event.getX(); //取得松开时的x坐标
+					int index = gallery.getSelectedItemPosition();
+					int count = gallery.getCount() ;
+					Log.d(TAG,"downX = " + downX + "; upX = " + upX);
+					Log.d(TAG, "index = " + index + "; count = " + count);
+					if(downX - upX > 100){
+						if(index == count - 1){//后翻
+							index = 0;
+						}else{
+							index ++; 
+						}
+					}else if(upX - downX > 100){
+						if(index == 0){//前翻
+							index = count - 1;
+						}else {
+							index --;
+						}
+					}
+					Log.d(TAG, "index = " + index);
+					gallery.setSelection(index,true);
+					return true;
+				}
+				return false;
+			}
+		});
 		gallery = (Gallery) findViewById(R.id.gallery);
 		gallery.setAdapter(new ImageAdapter(this));
 		gallery.setOnItemSelectedListener(this);
@@ -98,4 +138,8 @@ public class ImageSwitcherTest extends Activity implements
 	public void onNothingSelected(AdapterView<?> parent) {
 		// TODO Auto-generated method stub
 	}
+	
+	
+	
+	
 }
