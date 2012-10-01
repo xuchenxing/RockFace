@@ -15,6 +15,7 @@ so i think whether change a type of sensor to judge ,like speed.<br/>
 <li>
 the second menu is a test for ImageSwitcher ,code from google :)<br/>
 2012-9-21: add the slide handover for the imageSwitcher<br/>
+2012-10-1: add the menu exit, you can press the back button twice to exit the application.<br/>
 </li>
 </ol>
 <h2>
