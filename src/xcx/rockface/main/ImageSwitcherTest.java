@@ -1,5 +1,7 @@
 package xcx.rockface.main;
 
+import java.security.KeyStore.LoadStoreParameter;
+
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -69,12 +71,17 @@ public class ImageSwitcherTest extends Activity implements
 						}else{
 							index ++; 
 						}
+						is.setInAnimation(getApplicationContext(), R.layout.slide_in_right);
+						is.setOutAnimation(getApplicationContext(), R.layout.slide_out_left);						
 					}else if(upX - downX > 100){
 						if(index == 0){//Ç°·­
 							index = count - 1;
 						}else {
 							index --;
 						}
+						is.setInAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+						is.setOutAnimation(getApplicationContext(), android.R.anim.slide_out_right);
+
 					}
 					Log.d(TAG, "index = " + index);
 					gallery.setSelection(index,true);
