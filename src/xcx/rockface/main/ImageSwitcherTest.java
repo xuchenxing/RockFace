@@ -79,6 +79,9 @@ public class ImageSwitcherTest extends Activity implements
 						}else {
 							index --;
 						}
+						//http://www.cnblogs.com/yourancao520/archive/2012/03/26/2417498.html
+						//默认情况下 android.R.anim.slide_in_right 和 android.R.anim.slide_out_left是私有的,也就是说通过.属性是找不到的.
+						//解决办法:slide_in_right和slide_out_left这两个xml都可以在sdk里找到的，修改后作为自己的资源调用就好了
 						is.setInAnimation(getApplicationContext(), android.R.anim.slide_in_left);
 						is.setOutAnimation(getApplicationContext(), android.R.anim.slide_out_right);
 
