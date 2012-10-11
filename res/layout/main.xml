@@ -6,13 +6,13 @@
 
     <Button android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="RockFace!!!" 
+        android:text="RockFace摇一摇!!!" 
         android:id="@+id/rockface"/>
     
     
     <Button android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="imageSwitcher" 
+        android:text="图片展示" 
         android:id="@+id/imageswitcher"/>
     
     

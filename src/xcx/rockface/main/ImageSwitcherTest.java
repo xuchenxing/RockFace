@@ -29,10 +29,10 @@ public class ImageSwitcherTest extends Activity implements
 	
 	private ImageSwitcher is;
 	private Gallery gallery;
-	private Integer[] mThumbIds = { R.drawable.lp001, R.drawable.lp002, R.drawable.lp003,
-			R.drawable.lp004, R.drawable.lp005 };
-	private Integer[] mImageIds = { R.drawable.lp001, R.drawable.lp002, R.drawable.lp003,
-			R.drawable.lp004, R.drawable.lp005 };
+	private Integer[] mThumbIds = { R.drawable.p1, R.drawable.p2, R.drawable.p3,
+			R.drawable.p4, R.drawable.p5 };
+	private Integer[] mImageIds = { R.drawable.p1, R.drawable.p2, R.drawable.p3,
+			R.drawable.p4, R.drawable.p5 };
 	private int downX, upX;
 
 	/*

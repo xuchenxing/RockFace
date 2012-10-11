@@ -27,8 +27,8 @@ public class RockFaceActivity extends Activity implements SensorEventListener,
 
 	private ImageView imageView;
 
-	private int[] pic = { R.drawable.lp001, R.drawable.lp002, R.drawable.lp003,
-			R.drawable.lp004, R.drawable.lp005 };
+	private int[] pic = { R.drawable.p1, R.drawable.p2, R.drawable.p3,
+			R.drawable.p4, R.drawable.p5 };
 
 	private int picNum = 0;
 
@@ -40,7 +40,7 @@ public class RockFaceActivity extends Activity implements SensorEventListener,
 	private long lastUpdateTime;
 
 	// 加速度阈值，当摇晃速度达到这值后产生作用
-	private static final int ACCELERATION_LIMIT = 8;
+	private static final int ACCELERATION_LIMIT = 5;
 	// 两次检测的时间间隔
 	private static final int UPTATE_INTERVAL_TIME = 70;
 
